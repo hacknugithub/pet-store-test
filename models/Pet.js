@@ -1,20 +1,26 @@
-const { DataTypes } = require("sequelize");
-const { sequelize } = require("../db");
-const sequelize_instance = sequelize;
+const { Sequelize, DataTypes } = require("sequelize");
+const sequelize = new Sequelize("sqlite::memory:");
 
-const Pet = sequelize_instance.define("Pet", {
-  id: {
-    type: DataTypes.INTEGER(64),
-    allowNull: false,
-    unique: "compositeIndex",
+const Pet = sequelize.define(
+  "Pet",
+  {
+    id: {
+      primaryKey: true,
+      autoIncrement: true,
+      type: DataTypes.INTEGER(64),
+      allowNull: false,
+    },
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    tag: {
+      type: DataTypes.STRING,
+    },
   },
-  name: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
-  tag: {
-    type: DataTypes.STRING,
-  },
-});
+  { timestamps: false }
+);
 
-export default Pet;
+Pet.sync({ alter: true });
+
+module.exports = Pet;

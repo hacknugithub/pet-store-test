@@ -1,5 +1,9 @@
 # Pet Store API - Test
 
+## First steps
+
+Be shure to clone the repo and run **npm install**
+
 ## Configuring Database driver:
 
 In this proyect we are using **sequelize** as the ORM.

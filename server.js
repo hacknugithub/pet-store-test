@@ -3,8 +3,9 @@ const express = require("express");
 const colors = require("colors");
 const morgan = require("morgan");
 const dotenv = require("dotenv");
-const sequelize = require("./db");
-sequelize();
+const sequelizeConn = require("./db/index");
+
+sequelizeConn();
 
 dotenv.config({ path: "./config/config.env" });
 
@@ -18,7 +19,7 @@ if (process.env.NODE_ENV == "develop") {
   app.use(morgan("dev"));
 }
 
-app.use("/api/v1/pets", petRoutes);
+app.use("/api/v1/pets/", petRoutes);
 
 const PORT = process.env.PORT || 5000;
 
