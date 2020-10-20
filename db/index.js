@@ -1,4 +1,4 @@
-const {Sequelize} = require('sequelize');
+const { Sequelize } = require('sequelize');
 
 // Conection demo for sqlite
 // TODO: Consider implementing dinamic assigment of database with parameters as driver option
@@ -16,4 +16,4 @@ export const sequelize = () => {
     }
 } 
 
-export default sequelize;
+module.exports = sequelize;
