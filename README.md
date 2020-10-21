@@ -2,9 +2,9 @@
 
 ## First steps
 
-Be sure to clone the repo with: _git clone 'https://github.com/hacknugithub/pet-store-test.git'_ and run **npm install** before anything else.
+Be sure to clone the repo with: _git clone "https://github.com/hacknugithub/pet-store-test.git"_ and run **npm install** before anything else.
 
-## Configuring Database driver:
+### Configuring Database driver:
 
 1. In this proyect we are using **sequelize** as the ORM. So it supports **Postgres**,**MySQL2**, **MariaDB**, **SQLlite3** and **Microsoft SQL Server**.
 
@@ -40,7 +40,7 @@ DATABASE_NAME=petstore.sql
 DATABASE_HOST=localhost
 ```
 
-### Start the server
+## Start the server
 
 Run _npm start_ to run the server on a terminal instance. To stop the server use _ctrl + c_
 
@@ -48,7 +48,7 @@ Run _npm start_ to run the server on a terminal instance. To stop the server use
 
 To start a server with the watching changes feature run _npm server_. It will automatically refresh when changes are made. To stop the server use _ctrl + c_
 
-### Tests
+## Tests
 
 This proyect includes tests written in jasmine so be sure that you have already run _npm install_ to have the dependencies available.
 
@@ -62,14 +62,14 @@ https://www.getpostman.com/collections/b64823c45cdd0fc08eb9
 
 **Note:** You will need to have postman installed on your local machine and be sure tu be running on localhost.
 
-### Wiki for the API
+## Wiki for the API
 
 Don't forget to check the api documentation on github pages:
 _https://hacknugithub.github.io/pet-store-test/_
 
-**Note:** The examples in the api doc page will be functional when the deploy configuration is added to this repo. Soon.
+**Note:** The examples in the api doc page will be functional when the deploy configuration is added to this repo. Soon-ish.
 
-### Known Issues
+## Known Issues
 
 On file db/index.js in line 14 you can use:
 
