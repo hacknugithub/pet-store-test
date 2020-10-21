@@ -1,11 +1,14 @@
 const Pet = require("../models/Pet");
+const Error = require("../models/Error");
+const Pets = require("../models/Pets");
 
 /**
  * @api {get} /api/v1/pets/
- * @apiSampleRequest http://localhost:5000/api/v1/pets/
+ * @apiSampleRequest http://localhost:5000/api/v1/pets/?limit=100
  * @apiName listPets
  * @apiDescription Get a paged array of pets
  * @apiGroup Pet
+ * @apiParam {Integer} [limit] Limit to 100 pets per page
  * @apiSuccess {Array} Paged array of pets
  * @apiSuccessExample {json} Success-Response:
  * {
@@ -28,9 +31,19 @@ const Pet = require("../models/Pet");
  */
 exports.listPets = async (req, res, next) => {
   try {
-    const pets = await Pet.findAll();
-
+    const { limit, offset } = req.params;
+    const pets = await Pet.findAll({
+      offset: offset != undefined ? 0 : offset,
+      limit: limit,
+    });
     res.setHeader("Content-Type", "application/json");
+
+    if (pets.count > 100) {
+      pets = {
+        ...pets,
+        nextPage: `http://localhost:5000/api/v1/pets/?offset=${offset}limit=100`,
+      };
+    }
 
     return res.status(200).json({
       success: true,
@@ -38,10 +51,10 @@ exports.listPets = async (req, res, next) => {
       data: pets,
     });
   } catch (error) {
+    let error_obj = new Error({ code: 500, message: error.message });
     return res.status(500).json({
       success: false,
-      error: "Server Error",
-      data: error.message,
+      error: error_obj,
     });
   }
 };
@@ -85,10 +98,10 @@ exports.createPets = async (req, res, next) => {
       data: pet,
     });
   } catch (error) {
+    let error_obj = new Error({ code: 500, message: error.message });
     return res.status(500).json({
       success: false,
-      error: "Server Error",
-      data: error,
+      error: error_obj,
     });
   }
 };
@@ -116,10 +129,10 @@ exports.showPetById = async (req, res, next) => {
       data: found_pet,
     });
   } catch (error) {
+    let error_obj = new Error({ code: 500, message: error.message });
     return res.status(500).json({
       success: false,
-      error: "Server Error",
-      data: error.message,
+      error: error_obj,
     });
   }
 };

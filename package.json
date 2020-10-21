@@ -25,7 +25,7 @@
   },
   "apidoc": {
     "name": "Petstore API",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "REST API for a pet store",
     "title": "API Pet Store"
   }

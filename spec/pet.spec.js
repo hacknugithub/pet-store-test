@@ -13,7 +13,7 @@ describe("Server", () => {
 
   describe("pet GET POST", function () {
     it("should return 200 response code", function (done) {
-      request.get(endpoint, function (error, res) {
+      request.get(endpoint + "/?limit=100", function (error, res) {
         expect(res.statusCode).toEqual(200);
         done();
       });
