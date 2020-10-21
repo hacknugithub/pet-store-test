@@ -2,7 +2,7 @@
 
 ## First steps
 
-Be shure to clone the repo with git clone '' and run **npm install** before anything else.
+Be sure to clone the repo with git clone '' and run **npm install** before anything else.
 
 ## Configuring Database driver:
 
@@ -10,7 +10,7 @@ Be shure to clone the repo with git clone '' and run **npm install** before anyt
 
 ### Choose the database
 
-2. By deault the proyect is initialized with sqlite. But depending on the database you are going to use, open a terminal and run:
+2. By default the proyect is initialized with sqlite. But depending on the database you are going to use, open a terminal and run:
 
 - npm install --save pg pg-hstore _Postgres_
 - npm install --save mysql2
@@ -18,7 +18,7 @@ Be shure to clone the repo with git clone '' and run **npm install** before anyt
 - npm install --save sqlite3
 - npm install --save tedious _Microsoft SQL Server_
 
-3. Then be sure to fill the required parameters for the database of your choice within /config/config.env like so:
+3. Then, be sure to fill all the required parameters for the database of your choice within _/config/config.env_ like so:
 
 Choose the correct dialect from these options:
 
@@ -27,6 +27,8 @@ Choose the correct dialect from these options:
 - mysql
 - mariadb
 - mssql
+
+Modify your config.env file with the requested fields:
 
 ```
 NODE_ENV=develop
@@ -40,15 +42,15 @@ DATABASE_HOST=localhost
 
 ## Start the server
 
-Run _npm start_ to run the server on a terminal instance. To stop the server use ctrl + c.
+Run _npm start_ to run the server on a terminal instance. To stop the server use _ctrl + c_
 
 ### Watch changes
 
-To start a server with watch changes feature run _npm server_. It will automatically refresh when changes are made. To stop the server use ctrl + c.
+To start a server with the watching changes feature run _npm server_. It will automatically refresh when changes are made. To stop the server use _ctrl + c_
 
 ## Tests
 
-This proyect includes tests written in jasmine so be sure that you have already run _npm install_.
+This proyect includes tests written in jasmine so be sure that you have already run _npm install_ to have the dependencies available.
 
 To run the tests use _npm test_. It will automatically finish with the results of the tests.
 
