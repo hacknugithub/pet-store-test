@@ -81,12 +81,25 @@ define({ "api": [
     "title": "",
     "sampleRequest": [
       {
-        "url": "http://localhost:5000/api/v1/pets/"
+        "url": "http://localhost:5000/api/v1/pets/?limit=100"
       }
     ],
     "name": "listPets",
     "description": "<p>Get a paged array of pets</p>",
     "group": "Pet",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Integer",
+            "optional": true,
+            "field": "limit",
+            "description": "<p>Limit to 100 pets per page</p>"
+          }
+        ]
+      }
+    },
     "success": {
       "fields": {
         "Success 200": [
