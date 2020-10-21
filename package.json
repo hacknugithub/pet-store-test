@@ -22,5 +22,11 @@
   "devDependencies": {
     "jasmine": "^3.6.2",
     "nodemon": "^2.0.6"
+  },
+  "apidoc": {
+    "name": "Petstore API",
+    "version": "0.1.0",
+    "description": "REST API for a pet store",
+    "title": "API Pet Store"
   }
 }

@@ -2,21 +2,41 @@
 
 ## First steps
 
-Be shure to clone the repo with and run **npm install** before anything
+Be shure to clone the repo with git clone '' and run **npm install** before anything else.
 
 ## Configuring Database driver:
 
-In this proyect we are using **sequelize** as the ORM. So it supports **Postgres**,**MySQL2**, **MariaDB**, **SQLlite3** and **Microsoft SQL Server**.
+1. In this proyect we are using **sequelize** as the ORM. So it supports **Postgres**,**MySQL2**, **MariaDB**, **SQLlite3** and **Microsoft SQL Server**.
 
 ### Choose the database
 
-By deault the proyect is initialized with sqlite. But depending on the database you are going to use, open a terminal and run:
+2. By deault the proyect is initialized with sqlite. But depending on the database you are going to use, open a terminal and run:
 
 - npm install --save pg pg-hstore _Postgres_
 - npm install --save mysql2
 - npm install --save mariadb
 - npm install --save sqlite3
 - npm install --save tedious _Microsoft SQL Server_
+
+3. Then be sure to fill the required parameters for the database of your choice within /config/config.env like so:
+
+Choose the correct dialect from these options:
+
+- sqlite
+- postgres
+- mysql
+- mariadb
+- mssql
+
+```
+NODE_ENV=develop
+PORT=5000
+DATABASE_DIALECT=sqlite
+DATABASE_USER=root
+DATABASE_PASSWORD=
+DATABASE_NAME=petstore.sql
+DATABASE_HOST=localhost
+```
 
 ## Start the server
 
@@ -31,3 +51,11 @@ To start a server with watch changes feature run _npm server_. It will automatic
 This proyect includes tests written in jasmine so be sure that you have already run _npm install_.
 
 To run the tests use _npm test_. It will automatically finish with the results of the tests.
+
+## Postman examples
+
+Check out this link to get examples for the API:
+
+https://www.getpostman.com/collections/b64823c45cdd0fc08eb9
+
+**Note:** You will need to have postman installed on your local machine and be sure tu be running on localhost.

@@ -2,14 +2,29 @@ const Pet = require("../models/Pet");
 
 /**
  * @api {get} /api/v1/pets/
+ * @apiSampleRequest http://localhost:5000/api/v1/pets/
  * @apiName listPets
  * @apiDescription Get a paged array of pets
- * @apiGroup User
- *
- * @apiParam {None}.
- *
- * @apiSuccess {Array} Paged array of pets.
- * @apiError {Error Model} Unexpected error.
+ * @apiGroup Pet
+ * @apiSuccess {Array} Paged array of pets
+ * @apiSuccessExample {json} Success-Response:
+ * {
+ *   "success": true,
+ *   "count": 2,
+ *   "data": [
+ *       {
+ *           "id": 1,
+ *           "name": "Garfield",
+ *           "tag": "cats"
+ *       },
+ *       {
+ *           "id": 2,
+ *           "name": "Oddie",
+ *           "tag": "dogs"
+ *       }
+ *   ]
+ * }
+ * @apiError {Error} Unexpected error
  */
 exports.listPets = async (req, res, next) => {
   try {
@@ -36,8 +51,7 @@ exports.listPets = async (req, res, next) => {
  * @apiSampleRequest http://localhost:5000/api/v1/pets/
  * @apiName createPets
  * @apiDescription Create a new pet
- * @apiGroup User
- *
+ * @apiGroup Pet
  * @apiParam {String} [name] Required name of the pet
  * @apiParam {String} [tag] Optional tag for the pet
  * @apiParamExample {json} Request-Example:
@@ -47,7 +61,16 @@ exports.listPets = async (req, res, next) => {
  *     }
  *
  * @apiSuccess {Null} Null response.
- * @apiError {Error Model} Unexpected error.
+ * @apiSuccessExample {json} Success-Response:
+ * {
+ *  "success": true,
+ *  "data": {
+ *     "id": 1,
+ *     "name": "Oddie",
+ *     "tag": "dogs"
+ *  }
+ * }
+ * @apiError {Error} Unexpected error.
  */
 exports.createPets = async (req, res, next) => {
   try {
@@ -75,6 +98,7 @@ exports.createPets = async (req, res, next) => {
  * @apiSampleRequest http://localhost:5000/api/v1/pets/1
  * @apiName showPetById
  * @apiDescription Information for an specific pet
+ * @apiGroup Pet
  *
  * @apiParam {Integer} [id] Id for the pet you are looking
  *
