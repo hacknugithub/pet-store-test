@@ -2,7 +2,7 @@
 
 ## First steps
 
-Be sure to clone the repo with git clone '' and run **npm install** before anything else.
+Be sure to clone the repo with: _git clone 'https://github.com/hacknugithub/pet-store-test.git'_ and run **npm install** before anything else.
 
 ## Configuring Database driver:
 
@@ -61,3 +61,10 @@ Check out this link to get examples for the API:
 https://www.getpostman.com/collections/b64823c45cdd0fc08eb9
 
 **Note:** You will need to have postman installed on your local machine and be sure tu be running on localhost.
+
+## Wiki for the API
+
+Don't forget to check the api documentation on github pages:
+_https://hacknugithub.github.io/pet-store-test/_
+
+**Note:** The examples in the api doc page will be functional when the deploy configuration is added to this repo. Soon.
