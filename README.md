@@ -40,21 +40,21 @@ DATABASE_NAME=petstore.sql
 DATABASE_HOST=localhost
 ```
 
-## Start the server
+### Start the server
 
 Run _npm start_ to run the server on a terminal instance. To stop the server use _ctrl + c_
 
-### Watch changes
+## Watch changes
 
 To start a server with the watching changes feature run _npm server_. It will automatically refresh when changes are made. To stop the server use _ctrl + c_
 
-## Tests
+### Tests
 
 This proyect includes tests written in jasmine so be sure that you have already run _npm install_ to have the dependencies available.
 
 To run the tests use _npm test_. It will automatically finish with the results of the tests.
 
-## Postman examples
+### Postman examples
 
 Check out this link to get examples for the API:
 
@@ -62,9 +62,25 @@ https://www.getpostman.com/collections/b64823c45cdd0fc08eb9
 
 **Note:** You will need to have postman installed on your local machine and be sure tu be running on localhost.
 
-## Wiki for the API
+### Wiki for the API
 
 Don't forget to check the api documentation on github pages:
 _https://hacknugithub.github.io/pet-store-test/_
 
 **Note:** The examples in the api doc page will be functional when the deploy configuration is added to this repo. Soon.
+
+### Known Issues
+
+On file db/index.js in line 14 you can use:
+
+```
+await connection.sync({ force: true });
+```
+
+To prevent errors when using pre-existing database.
+
+Be sure to update Pet model also on line 24, if you have errors with the data not being found
+
+```
+Pet.sync({ force: true });
+```

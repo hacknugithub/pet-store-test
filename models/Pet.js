@@ -21,6 +21,6 @@ const Pet = sequelize.define(
   { timestamps: false }
 );
 
-Pet.sync({ alter: true });
+Pet.sync({ force: true });
 
 module.exports = Pet;

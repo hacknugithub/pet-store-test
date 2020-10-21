@@ -51,10 +51,10 @@ exports.listPets = async (req, res, next) => {
       data: pets,
     });
   } catch (error) {
-    let error_obj = new Error({ code: 500, message: error.message });
+    let error_obj = Error.build({ code: 500, message: error.message });
     return res.status(500).json({
       success: false,
-      error: error_obj,
+      error: error_obj.toJSON(),
     });
   }
 };
@@ -93,15 +93,16 @@ exports.createPets = async (req, res, next) => {
       name: name,
       tag: tag,
     });
+
     return res.status(201).json({
       success: true,
       data: pet,
     });
   } catch (error) {
-    let error_obj = new Error({ code: 500, message: error.message });
+    let error_obj = Error.build({ code: 500, message: error.message });
     return res.status(500).json({
       success: false,
-      error: error_obj,
+      error: error_obj.toJSON(),
     });
   }
 };
@@ -124,15 +125,21 @@ exports.showPetById = async (req, res, next) => {
     console.log(`Looking for pet with an id: ${pet_id}`.blue);
     const found_pet = await Pet.findOne({ where: { id: pet_id } });
 
+    const found_pet_obj = new Pet({
+      id: found_pet.id,
+      name: found_pet.name,
+      tag: found_pet.tag,
+    });
     return res.status(200).json({
       success: true,
-      data: found_pet,
+      data: found_pet_obj,
     });
   } catch (error) {
-    let error_obj = new Error({ code: 500, message: error.message });
+    let error_obj = Error.build({ code: 500, message: error.message });
+    console.log(error_obj);
     return res.status(500).json({
       success: false,
-      error: error_obj,
+      error: error_obj.toJSON(),
     });
   }
 };
