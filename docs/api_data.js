@@ -5,7 +5,7 @@ define({ "api": [
     "title": "",
     "sampleRequest": [
       {
-        "url": "http://localhost:5000/api/v1/pets/"
+        "url": "https://pet-store-api-test.herokuapp.com/api/v1/pets/"
       }
     ],
     "name": "createPets",
@@ -81,7 +81,7 @@ define({ "api": [
     "title": "",
     "sampleRequest": [
       {
-        "url": "http://localhost:5000/api/v1/pets/?limit=100"
+        "url": "https://pet-store-api-test.herokuapp.com/api/v1/pets/?limit=100"
       }
     ],
     "name": "listPets",
@@ -143,7 +143,7 @@ define({ "api": [
     "title": "",
     "sampleRequest": [
       {
-        "url": "http://localhost:5000/api/v1/pets/1"
+        "url": "https://pet-store-api-test.herokuapp.com/api/v1/pets/1"
       }
     ],
     "name": "showPetById",

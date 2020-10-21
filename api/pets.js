@@ -2,9 +2,14 @@ const Pet = require("../models/Pet");
 const Error = require("../models/Error");
 const Pets = require("../models/Pets");
 
+const baseURL =
+  process.env.NODE_ENV === "production"
+    ? "https://pet-store-api-test.herokuapp.com/api/v1/pets"
+    : "http://localhost:5000/api/v1/pets";
+
 /**
  * @api {get} /api/v1/pets/
- * @apiSampleRequest http://localhost:5000/api/v1/pets/?limit=100
+ * @apiSampleRequest https://pet-store-api-test.herokuapp.com/api/v1/pets/?limit=100
  * @apiName listPets
  * @apiDescription Get a paged array of pets
  * @apiGroup Pet
@@ -41,7 +46,7 @@ exports.listPets = async (req, res, next) => {
     if (pets.count > 100) {
       pets = {
         ...pets,
-        nextPage: `http://localhost:5000/api/v1/pets/?offset=${offset}limit=100`,
+        nextPage: baseURL + `/?offset=${offset}limit=100`,
       };
     }
 
@@ -61,7 +66,7 @@ exports.listPets = async (req, res, next) => {
 
 /**
  * @api {post} /api/v1/pets/
- * @apiSampleRequest http://localhost:5000/api/v1/pets/
+ * @apiSampleRequest https://pet-store-api-test.herokuapp.com/api/v1/pets/
  * @apiName createPets
  * @apiDescription Create a new pet
  * @apiGroup Pet
@@ -109,7 +114,7 @@ exports.createPets = async (req, res, next) => {
 
 /**
  * @api {get} /api/v1/pets/:id
- * @apiSampleRequest http://localhost:5000/api/v1/pets/1
+ * @apiSampleRequest https://pet-store-api-test.herokuapp.com/api/v1/pets/1
  * @apiName showPetById
  * @apiDescription Information for an specific pet
  * @apiGroup Pet
