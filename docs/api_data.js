@@ -3,11 +3,6 @@ define({ "api": [
     "type": "post",
     "url": "/api/v1/pets/",
     "title": "",
-    "sampleRequest": [
-      {
-        "url": "https://pet-store-api-test.herokuapp.com/api/v1/pets/"
-      }
-    ],
     "name": "createPets",
     "description": "<p>Create a new pet</p>",
     "group": "Pet",
@@ -17,7 +12,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "String",
-            "optional": true,
+            "optional": false,
             "field": "name",
             "description": "<p>Required name of the pet</p>"
           },
@@ -73,17 +68,17 @@ define({ "api": [
     },
     "version": "0.0.0",
     "filename": "api/pets.js",
-    "groupTitle": "Pet"
+    "groupTitle": "Pet",
+    "sampleRequest": [
+      {
+        "url": "https://pet-store-api-test.herokuapp.com/api/v1/pets/"
+      }
+    ]
   },
   {
     "type": "get",
     "url": "/api/v1/pets/",
     "title": "",
-    "sampleRequest": [
-      {
-        "url": "https://pet-store-api-test.herokuapp.com/api/v1/pets/?limit=100"
-      }
-    ],
     "name": "listPets",
     "description": "<p>Get a paged array of pets</p>",
     "group": "Pet",
@@ -93,7 +88,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "Integer",
-            "optional": true,
+            "optional": false,
             "field": "limit",
             "description": "<p>Limit to 100 pets per page</p>"
           }
@@ -135,17 +130,17 @@ define({ "api": [
     },
     "version": "0.0.0",
     "filename": "api/pets.js",
-    "groupTitle": "Pet"
+    "groupTitle": "Pet",
+    "sampleRequest": [
+      {
+        "url": "https://pet-store-api-test.herokuapp.com/api/v1/pets/"
+      }
+    ]
   },
   {
     "type": "get",
     "url": "/api/v1/pets/:id",
     "title": "",
-    "sampleRequest": [
-      {
-        "url": "https://pet-store-api-test.herokuapp.com/api/v1/pets/1"
-      }
-    ],
     "name": "showPetById",
     "description": "<p>Information for an specific pet</p>",
     "group": "Pet",
@@ -190,6 +185,11 @@ define({ "api": [
     },
     "version": "0.0.0",
     "filename": "api/pets.js",
-    "groupTitle": "Pet"
+    "groupTitle": "Pet",
+    "sampleRequest": [
+      {
+        "url": "https://pet-store-api-test.herokuapp.com/api/v1/pets/:id"
+      }
+    ]
   }
 ] });

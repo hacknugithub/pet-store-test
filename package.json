@@ -26,8 +26,9 @@
   },
   "apidoc": {
     "name": "Petstore API",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "description": "REST API for a pet store",
-    "title": "API Pet Store"
+    "title": "API Pet Store",
+    "sampleUrl": "https://pet-store-api-test.herokuapp.com"
   }
 }

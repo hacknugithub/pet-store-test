@@ -9,11 +9,10 @@ const baseURL =
 
 /**
  * @api {get} /api/v1/pets/
- * @apiSampleRequest https://pet-store-api-test.herokuapp.com/api/v1/pets/?limit=100
  * @apiName listPets
  * @apiDescription Get a paged array of pets
  * @apiGroup Pet
- * @apiParam {Integer} [limit] Limit to 100 pets per page
+ * @apiParam {Integer} limit Limit to 100 pets per page
  * @apiSuccess {Array} Paged array of pets
  * @apiSuccessExample {json} Success-Response:
  * {
@@ -66,11 +65,10 @@ exports.listPets = async (req, res, next) => {
 
 /**
  * @api {post} /api/v1/pets/
- * @apiSampleRequest https://pet-store-api-test.herokuapp.com/api/v1/pets/
  * @apiName createPets
  * @apiDescription Create a new pet
  * @apiGroup Pet
- * @apiParam {String} [name] Required name of the pet
+ * @apiParam {String} name Required name of the pet
  * @apiParam {String} [tag] Optional tag for the pet
  * @apiParamExample {json} Request-Example:
  *     {
@@ -114,7 +112,6 @@ exports.createPets = async (req, res, next) => {
 
 /**
  * @api {get} /api/v1/pets/:id
- * @apiSampleRequest https://pet-store-api-test.herokuapp.com/api/v1/pets/1
  * @apiName showPetById
  * @apiDescription Information for an specific pet
  * @apiGroup Pet
