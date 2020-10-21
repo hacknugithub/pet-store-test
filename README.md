@@ -30,14 +30,28 @@ Choose the correct dialect from these options:
 
 Modify your config.env file with the requested fields:
 
+Example for local host:
+
 ```
 NODE_ENV=develop
 PORT=5000
 DATABASE_DIALECT=sqlite
 DATABASE_USER=root
 DATABASE_PASSWORD=
-DATABASE_NAME=petstore.sql
+DATABASE_NAME=petstore
 DATABASE_HOST=localhost
+```
+
+Example for production:
+
+```
+NODE_ENV=production
+PORT=5000
+DATABASE_DIALECT=mysql
+DATABASE_USER=user1234
+DATABASE_PASSWORD=p@ssw0rd
+DATABASE_NAME=petstore
+DATABASE_HOST=https://domain.com/databases
 ```
 
 ## Start the server
@@ -67,7 +81,7 @@ https://www.getpostman.com/collections/b64823c45cdd0fc08eb9
 Don't forget to check the api documentation on github pages:
 _https://hacknugithub.github.io/pet-store-test/_
 
-**Note:** The examples in the api doc page will be functional when the deploy configuration is added to this repo. Soon-ish.
+**Note:** The examples in the api doc page will be functional when the deploy configuration is added to this repo. Almost there.
 
 ## Known Issues
 
