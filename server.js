@@ -13,6 +13,7 @@ sequelizeConn();
 const petRoutes = require("./routes/pets");
 
 const app = express();
+app.use(cors());
 
 app.use(express.json());
 
