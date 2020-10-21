@@ -2,12 +2,13 @@ const path = require("path");
 const express = require("express");
 const colors = require("colors");
 const morgan = require("morgan");
+
 const dotenv = require("dotenv");
+dotenv.config({ path: "./config/config.env" });
+
 const sequelizeConn = require("./db/index");
 
 sequelizeConn();
-
-dotenv.config({ path: "./config/config.env" });
 
 const petRoutes = require("./routes/pets");
 

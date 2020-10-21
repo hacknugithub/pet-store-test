@@ -1,12 +1,9 @@
 const { Sequelize } = require("sequelize");
 
-// Conection demo for sqlite
+const config = require("../config/db.config");
 // TODO: Consider implementing dinamic assigment of database with parameters as driver option
 const sequelizeConn = async () => {
-  const connection = new Sequelize({
-    dialect: "sqlite",
-    storage: "./petstore.sqlite",
-  });
+  const connection = new Sequelize(config.config);
   try {
     await connection.authenticate();
     console.log({
