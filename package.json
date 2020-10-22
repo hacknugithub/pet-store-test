@@ -4,7 +4,7 @@
   "description": "This is a test for guru developer job",
   "main": "server.js",
   "scripts": {
-    "start": "npm i && node server",
+    "start": "node server",
     "server": "nodemon server",
     "test": "./node_modules/jasmine/bin/jasmine.js"
   },
@@ -29,7 +29,7 @@
   },
   "apidoc": {
     "name": "Petstore API",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "description": "REST API for a pet store",
     "title": "API Pet Store",
     "sampleUrl": "https://pet-store-api-test.herokuapp.com"
