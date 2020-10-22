@@ -11,7 +11,7 @@ const sequelizeConn = async () => {
       message: "Connection has been established successfully",
     });
     console.log(`Database connected: ${connection}`);
-    await connection.sync({ alter: true });
+    // await connection.sync({ alter: true });
     return connection;
   } catch (error) {
     return { success: false, message: error.message };

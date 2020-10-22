@@ -38,10 +38,10 @@
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "Null",
+            "type": "Object",
             "optional": false,
-            "field": "Null",
-            "description": "<p>response.</p>"
+            "field": "Pet",
+            "description": "<p>Object containing fields id, name, tag.</p>"
           }
         ]
       },
@@ -89,8 +89,8 @@
             "group": "Parameter",
             "type": "Integer",
             "optional": false,
-            "field": "limit",
-            "description": "<p>Limit to 100 pets per page</p>"
+            "field": "page",
+            "description": "<p>Page number you want to get</p>"
           }
         ]
       }
@@ -110,7 +110,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n  \"success\": true,\n  \"count\": 2,\n  \"data\": [\n      {\n          \"id\": 1,\n          \"name\": \"Garfield\",\n          \"tag\": \"cats\"\n      },\n      {\n          \"id\": 2,\n          \"name\": \"Oddie\",\n          \"tag\": \"dogs\"\n      }\n  ]\n}",
+          "content": "{\n  \"success\": true,\n  \"data\": [\n      \"pager\": {\n          \"totalItems\": 149,\n          \"currentPage\": 1,\n          \"pageSize\": 100,\n          \"totalPages\": 2,\n          \"startPage\": 1,\n          \"endPage\": 2,\n          \"startIndex\": 0,\n          \"endIndex\": 99,\n          \"pages\": [\n              1,\n              2\n          ]\n      },\n      \"pageOfPets\": [\n          {\n              \"id\": 1,\n              \"name\": \"Garfield\",\n              \"tag\": \"cats\"\n          },\n          {\n              \"id\": 2,\n              \"name\": \"Oddie\",\n              \"tag\": \"dogs\"\n          },\n          {\n              \"id\": 3,\n              \"name\": \"Junius\",\n              \"tag\": \"iguanas\"\n          },\n          ...\n  ]\n}",
           "type": "json"
         }
       ]
@@ -150,7 +150,7 @@
           {
             "group": "Parameter",
             "type": "Integer",
-            "optional": true,
+            "optional": false,
             "field": "id",
             "description": "<p>Id for the pet you are looking</p>"
           }
@@ -162,10 +162,10 @@
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "Pet",
+            "type": "Object",
             "optional": false,
-            "field": "A",
-            "description": "<p>Pet data Model.</p>"
+            "field": "Pet",
+            "description": "<p>Object containing fields id, name, tag.</p>"
           }
         ]
       }

@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "root",
+    "password": null,
+    "database": "petstore",
+    "host": "localhost",
+    "dialect": "sqlite"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "petstore",
+    "host": "127.0.0.1",
+    "dialect": "sqlite"
+  },
+  "production": {
+    "username": "dykc1376j767w9sw",
+    "password": "ywg3bznb79sl8mbz",
+    "database": "drkt0lsuuvtyfrjh",
+    "host": "sm9j2j5q6c8bpgyq.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "dialect": "mysql"
+  }
+}

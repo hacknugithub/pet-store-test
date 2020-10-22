@@ -3,6 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const colors = require("colors");
 const morgan = require("morgan");
+const paginate = require("jw-paginate");
 
 const dotenv = require("dotenv");
 dotenv.config({ path: "./config/config.env" });
@@ -16,9 +17,11 @@ const petRoutes = require("./routes/pets");
 const app = express();
 app.use(cors());
 
+app.use(paginate);
+
 app.use(express.json());
 
-if (process.env.NODE_ENV == "develop") {
+if (process.env.NODE_ENV == "development") {
   app.use(morgan("dev"));
 }
 
