@@ -54,6 +54,8 @@ DATABASE_NAME=petstore
 DATABASE_HOST=https://domain.com/databases
 ```
 
+Note that with sequelize we can use the config.json file located in config/config.json to work with a lot more of options, such as database migrations, database seeding, automatic scaffolding of models, and more.
+
 ## Start the server
 
 Run _npm start_ to run the server on a terminal instance. To stop the server use _ctrl + c_
@@ -78,12 +80,28 @@ https://www.getpostman.com/collections/b64823c45cdd0fc08eb9
 
 ## Wiki for the API
 
-Don't forget to check the api documentation on github pages:
+Don't forget to check the interactive api documentation on github pages:
 _https://hacknugithub.github.io/pet-store-test/_
 
-**Note:** The examples in the api doc page will be functional when the deploy configuration is added to this repo. Almost there.
+**Note:** The examples in the api doc page are functional. Yay!
 
 ## Known Issues
+
+Be sure to use the sequelize-cli tool to generate migrations and seeding the database. Also the usage of this prevent the errors described bellow.
+
+# Migrate
+
+```
+npx sequelize-cli db:migrate
+```
+
+# Seeding
+
+```
+npx sequelize-cli db:seed:all
+```
+
+# Resolved
 
 On file db/index.js in line 14 you can use:
 

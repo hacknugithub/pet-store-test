@@ -126,16 +126,13 @@ exports.createPets = async (req, res, next) => {
  * @apiName showPetById
  * @apiDescription Information for an specific pet
  * @apiGroup Pet
- *
- * @apiParam {Integer} id Id for the pet you are looking
- *
  * @apiSuccess {Object} Pet Object containing fields id, name, tag.
  * @apiError {Error} Unexpected error Model.
  */
 exports.showPetById = async (req, res, next) => {
   try {
     res.setHeader("Content-Type", "application/json");
-    const pet_id = req.params.id;
+    const pet_id = +req.params.id;
     console.log(`Looking for pet with an id: ${pet_id}`.blue);
     const found_pet = await models.Pet.findOne({ where: { id: pet_id } });
     return res.status(200).json({

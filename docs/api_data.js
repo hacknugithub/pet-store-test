@@ -144,19 +144,6 @@ define({ "api": [
     "name": "showPetById",
     "description": "<p>Information for an specific pet</p>",
     "group": "Pet",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "Integer",
-            "optional": false,
-            "field": "id",
-            "description": "<p>Id for the pet you are looking</p>"
-          }
-        ]
-      }
-    },
     "success": {
       "fields": {
         "Success 200": [
