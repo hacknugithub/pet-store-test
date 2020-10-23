@@ -89,19 +89,19 @@ _https://hacknugithub.github.io/pet-store-test/_
 
 Be sure to use the sequelize-cli tool to generate migrations and seeding the database. Also the usage of this prevent the errors described bellow.
 
-# Migrate
+## Migrate
 
 ```
 npx sequelize-cli db:migrate
 ```
 
-# Seeding
+## Seeding
 
 ```
 npx sequelize-cli db:seed:all
 ```
 
-# Resolved
+## Resolved
 
 On file db/index.js in line 14 you can use:
 

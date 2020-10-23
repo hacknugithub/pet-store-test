@@ -135,10 +135,18 @@ exports.showPetById = async (req, res, next) => {
     const pet_id = +req.params.id;
     console.log(`Looking for pet with an id: ${pet_id}`.blue);
     const found_pet = await models.Pet.findOne({ where: { id: pet_id } });
-    return res.status(200).json({
-      success: true,
-      data: found_pet,
-    });
+    if (found_pet.length > 1) {
+      return res.status(400).json({
+        success: false,
+        code: 400,
+        error: "Please provide a valid id",
+      });
+    } else {
+      return res.status(200).json({
+        success: true,
+        data: found_pet,
+      });
+    }
   } catch (error) {
     return res.status(500).json({
       success: false,
