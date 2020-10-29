@@ -3,6 +3,26 @@ define({ "api": [
     "type": "post",
     "url": "/api/v1/pets/",
     "title": "",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>token parameter obtained when creating an user</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n    \"Authorization\": \"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiMmUzNGM3ZjAtMTk5My0xMWViLWE2OTktZTViYTJhOTllYWQ4IiwiaWF0IjoxNjAzOTQwNTQ5LCJleHAiOjE2MDQxNTY1NDl9.6rEB4jWThJTPNR7RaVIr9nG5rYC6GCY9eDpHtmQstIc\"\n}",
+          "type": "json"
+        }
+      ]
+    },
     "name": "createPets",
     "description": "<p>Create a new pet</p>",
     "group": "Pet",
@@ -79,6 +99,26 @@ define({ "api": [
     "type": "get",
     "url": "/api/v1/pets/",
     "title": "",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>token parameter obtained when creating an user</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n    \"Authorization\": \"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiMmUzNGM3ZjAtMTk5My0xMWViLWE2OTktZTViYTJhOTllYWQ4IiwiaWF0IjoxNjAzOTQwNTQ5LCJleHAiOjE2MDQxNTY1NDl9.6rEB4jWThJTPNR7RaVIr9nG5rYC6GCY9eDpHtmQstIc\"\n}",
+          "type": "json"
+        }
+      ]
+    },
     "name": "listPets",
     "description": "<p>Get a paged array of pets</p>",
     "group": "Pet",
@@ -141,6 +181,26 @@ define({ "api": [
     "type": "get",
     "url": "/api/v1/pets/:id",
     "title": "",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>token parameter obtained when creating an user</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n    \"Authorization\": \"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiMmUzNGM3ZjAtMTk5My0xMWViLWE2OTktZTViYTJhOTllYWQ4IiwiaWF0IjoxNjAzOTQwNTQ5LCJleHAiOjE2MDQxNTY1NDl9.6rEB4jWThJTPNR7RaVIr9nG5rYC6GCY9eDpHtmQstIc\"\n}",
+          "type": "json"
+        }
+      ]
+    },
     "name": "showPetById",
     "description": "<p>Information for an specific pet</p>",
     "group": "Pet",
@@ -176,6 +236,75 @@ define({ "api": [
     "sampleRequest": [
       {
         "url": "https://pet-store-api-test.herokuapp.com/api/v1/pets/:id"
+      }
+    ]
+  },
+  {
+    "type": "post",
+    "url": "/api/v1/users/",
+    "title": "",
+    "name": "createUsers",
+    "description": "<p>Create a new User</p>",
+    "group": "User",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "Required",
+            "description": "<p>name of the user</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{\n  \"name\": \"Garfield\",\n  \"email\": \"garfield@cat.com\",\n  \"password\": \"ilovelassagna\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>for making requests</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n \"success\": true,\n \"token\": \"token\",\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "type": "Error",
+            "optional": false,
+            "field": "Unexpected",
+            "description": "<p>error.</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "api/users.js",
+    "groupTitle": "User",
+    "sampleRequest": [
+      {
+        "url": "https://pet-store-api-test.herokuapp.com/api/v1/users/"
       }
     ]
   }
