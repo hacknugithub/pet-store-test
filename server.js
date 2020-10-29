@@ -4,6 +4,7 @@ const cors = require("cors");
 const colors = require("colors");
 const morgan = require("morgan");
 const paginate = require("jw-paginate");
+const { authenticateRequest } = require("./middleware/auth");
 
 const dotenv = require("dotenv");
 dotenv.config({ path: "./config/config.env" });
@@ -13,6 +14,7 @@ const sequelizeConn = require("./db/index");
 sequelizeConn();
 
 const petRoutes = require("./routes/pets");
+const userRoutes = require("./routes/users");
 
 const app = express();
 app.use(cors());
@@ -25,7 +27,8 @@ if (process.env.NODE_ENV == "development") {
   app.use(morgan("dev"));
 }
 
-app.use("/api/v1/pets/", petRoutes);
+app.use("/api/v1/pets/", authenticateRequest, petRoutes);
+app.use("/api/v1/users/", userRoutes);
 
 const PORT = process.env.PORT || 5000;
 

@@ -76,7 +76,7 @@ Check out this link to get examples for the API:
 
 https://www.getpostman.com/collections/b64823c45cdd0fc08eb9
 
-**Note:** You will need to have postman installed on your local machine and be sure tu be running on localhost.
+**Note:** You will need to have postman installed on your local machine and be sure to be running on localhost.
 
 ## Wiki for the API
 
