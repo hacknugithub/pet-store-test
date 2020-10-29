@@ -76,7 +76,7 @@ Check out this link to get examples for the API:
 
 https://www.getpostman.com/collections/b64823c45cdd0fc08eb9
 
-**Note:** You will need to have postman installed on your local machine and be sure to be running on localhost. Also have in mind that the pet routes are now secured with JWT Bearer token authorization. Check the documentation for examples on hoy to add the headers required.
+**Note:** You will need to have postman installed on your local machine and be sure to be running on localhost. Also have in mind that the pet routes are now secured with JWT Bearer token authorization. Check the documentation for examples on how to add the headers required.
 
 ## Wiki for the API
 

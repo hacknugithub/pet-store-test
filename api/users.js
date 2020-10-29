@@ -5,9 +5,9 @@ const models = require("../models");
  * @apiName createUsers
  * @apiDescription Create a new User
  * @apiGroup User
- * @apiParam {String} Required name of the user
- * @apiParam {String} Required password
- * @apiParam {String} Required valid email
+ * @apiParam {String} name Required name of the user
+ * @apiParam {String} password Required password
+ * @apiParam {String} email Required valid email
  * @apiParamExample {json} Request-Example:
  *     {
  *       "name": "Garfield",
@@ -19,7 +19,7 @@ const models = require("../models");
  * @apiSuccessExample {json} Success-Response:
  * {
  *  "success": true,
- *  "token": "token",
+ *  "token": "<token>",
  * }
  * @apiError {Error} Unexpected error.
  */

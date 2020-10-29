@@ -6,7 +6,7 @@ const models = require("../models");
  * @apiHeader {String} Authorization token parameter obtained when creating an user
  * @apiHeaderExample {json} Header-Example:
  *      {
- *          "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiMmUzNGM3ZjAtMTk5My0xMWViLWE2OTktZTViYTJhOTllYWQ4IiwiaWF0IjoxNjAzOTQwNTQ5LCJleHAiOjE2MDQxNTY1NDl9.6rEB4jWThJTPNR7RaVIr9nG5rYC6GCY9eDpHtmQstIc"
+ *          "Authorization": "Bearer <token>"
  *      }
  * @apiName listPets
  * @apiDescription Get a paged array of pets
@@ -83,7 +83,7 @@ exports.listPets = async (req, res, next) => {
  * @apiHeader {String} Authorization token parameter obtained when creating an user
  * @apiHeaderExample {json} Header-Example:
  *      {
- *          "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiMmUzNGM3ZjAtMTk5My0xMWViLWE2OTktZTViYTJhOTllYWQ4IiwiaWF0IjoxNjAzOTQwNTQ5LCJleHAiOjE2MDQxNTY1NDl9.6rEB4jWThJTPNR7RaVIr9nG5rYC6GCY9eDpHtmQstIc"
+ *          "Authorization": "Bearer <token>"
  *      }
  * @apiName createPets
  * @apiDescription Create a new pet
@@ -136,7 +136,7 @@ exports.createPets = async (req, res, next) => {
  * @apiHeader {String} Authorization token parameter obtained when creating an user
  * @apiHeaderExample {json} Header-Example:
  *      {
- *          "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiMmUzNGM3ZjAtMTk5My0xMWViLWE2OTktZTViYTJhOTllYWQ4IiwiaWF0IjoxNjAzOTQwNTQ5LCJleHAiOjE2MDQxNTY1NDl9.6rEB4jWThJTPNR7RaVIr9nG5rYC6GCY9eDpHtmQstIc"
+ *          "Authorization": "Bearer <token>"
  *      }
  * @apiName showPetById
  * @apiDescription Information for an specific pet

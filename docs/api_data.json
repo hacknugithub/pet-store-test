@@ -18,7 +18,7 @@
       "examples": [
         {
           "title": "Header-Example:",
-          "content": "{\n    \"Authorization\": \"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiMmUzNGM3ZjAtMTk5My0xMWViLWE2OTktZTViYTJhOTllYWQ4IiwiaWF0IjoxNjAzOTQwNTQ5LCJleHAiOjE2MDQxNTY1NDl9.6rEB4jWThJTPNR7RaVIr9nG5rYC6GCY9eDpHtmQstIc\"\n}",
+          "content": "{\n    \"Authorization\": \"Bearer <token>\"\n}",
           "type": "json"
         }
       ]
@@ -114,7 +114,7 @@
       "examples": [
         {
           "title": "Header-Example:",
-          "content": "{\n    \"Authorization\": \"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiMmUzNGM3ZjAtMTk5My0xMWViLWE2OTktZTViYTJhOTllYWQ4IiwiaWF0IjoxNjAzOTQwNTQ5LCJleHAiOjE2MDQxNTY1NDl9.6rEB4jWThJTPNR7RaVIr9nG5rYC6GCY9eDpHtmQstIc\"\n}",
+          "content": "{\n    \"Authorization\": \"Bearer <token>\"\n}",
           "type": "json"
         }
       ]
@@ -196,7 +196,7 @@
       "examples": [
         {
           "title": "Header-Example:",
-          "content": "{\n    \"Authorization\": \"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiMmUzNGM3ZjAtMTk5My0xMWViLWE2OTktZTViYTJhOTllYWQ4IiwiaWF0IjoxNjAzOTQwNTQ5LCJleHAiOjE2MDQxNTY1NDl9.6rEB4jWThJTPNR7RaVIr9nG5rYC6GCY9eDpHtmQstIc\"\n}",
+          "content": "{\n    \"Authorization\": \"Bearer <token>\"\n}",
           "type": "json"
         }
       ]
@@ -253,8 +253,22 @@
             "group": "Parameter",
             "type": "String",
             "optional": false,
-            "field": "Required",
-            "description": "<p>name of the user</p>"
+            "field": "name",
+            "description": "<p>Required name of the user</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "password",
+            "description": "<p>Required password</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "email",
+            "description": "<p>Required valid email</p>"
           }
         ]
       },
@@ -281,7 +295,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n \"success\": true,\n \"token\": \"token\",\n}",
+          "content": "{\n \"success\": true,\n \"token\": \"<token>\",\n}",
           "type": "json"
         }
       ]

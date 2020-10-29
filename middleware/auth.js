@@ -1,6 +1,13 @@
 const jwt = require("jsonwebtoken");
 const models = require("../models");
 
+/**
+ * @desciption Authenticate request middleware to verify token and request
+ * @param {*} req HTTP object that must contain res.headers with an Authorization: Bearer <token>
+ * @param {*} res HTTP response object
+ * @param {*} next Function that will be executed after the validation has ended successfully
+ * @return {*}
+ */
 exports.authenticateRequest = async (req, res, next) => {
   if (!req.headers.authorization) {
     return res.status(403).json({
