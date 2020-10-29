@@ -5,9 +5,9 @@ const models = require("../models");
  * @apiName createUsers
  * @apiDescription Create a new User
  * @apiGroup User
- * @apiParam {String} name Required name of the user
- * @apiParam {String} password Required password
- * @apiParam {String} email valid email
+ * @apiParam {String} Required name of the user
+ * @apiParam {String} Required password
+ * @apiParam {String} Required valid email
  * @apiParamExample {json} Request-Example:
  *     {
  *       "name": "Garfield",
